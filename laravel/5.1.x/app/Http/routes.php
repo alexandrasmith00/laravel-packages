@@ -14,8 +14,6 @@
 
 Route::get('/', function () {
     
-	return Alchemy::hello();
-	
-	
+	return Alchemy::concepts('text', "Hey what's going on? I heard about this new concert coming to Boston in the summer. Do you want to go?", []);
 	
 });

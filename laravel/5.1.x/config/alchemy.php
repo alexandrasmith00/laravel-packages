@@ -4,24 +4,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default URL Shortening provider
+    | Base URL
     |--------------------------------------------------------------------------
     |
-    | Supported Providers: bitly
+    | Base URL for the alchemy calls
     |
     */
-    'url' => 'bitly',
+    'url' => env('ALCHEMY_URL', 'http://access.alchemyapi.com/calls'),
 	
-
     /*
     |--------------------------------------------------------------------------
-    | URL Shortening Providers
+    | API Key
     |--------------------------------------------------------------------------
     |
-    | Here are each of the URL Shortening Providers configuration.
+    | Enter your API key from the Alchemy service on Bluemix
     |
     */
-    'api_key' => 'hey'
-
-
+	  'key' => env('ALCHEMY_API_KEY')
 ];

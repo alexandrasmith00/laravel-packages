@@ -20,5 +20,5 @@ return [
     | Enter your API key from the Alchemy service on Bluemix
     |
     */
-	  'api_key' => env('ALCHEMY_API_KEY')
+	  'key' => env('ALCHEMY_API_KEY')
 ];
