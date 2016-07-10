@@ -1,6 +1,6 @@
 {
-    "name": "lexismith/laravel-alchemy",
-    "description": "Package for Laravel integration with Alchemy API",
+    "name": "lexismith/laravel-refer",
+    "description": "Laravel package for creating a referral-based waitlist",
     "license": "MIT",
 		"version": "1.0.0",
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-					"LexiSmith\\LaravelAlchemy\\": "src/"
+					"LexiSmith\\LaravelRefer\\": "src/"
         }
     },
     "require": {}

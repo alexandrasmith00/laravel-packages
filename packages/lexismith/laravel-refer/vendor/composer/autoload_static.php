@@ -4,17 +4,17 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit810e035cdc0cb4ec581ebcf6c4a9cb88
+class ComposerStaticInitc72c14dfee0125b70824a71f97fb4676
 {
     public static $prefixLengthsPsr4 = array (
         'L' => 
         array (
-            'LexiSmith\\LaravelAlchemy\\' => 25,
+            'LexiSmith\\LaravelRefer\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'LexiSmith\\LaravelAlchemy\\' => 
+        'LexiSmith\\LaravelRefer\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -23,8 +23,8 @@ class ComposerStaticInit810e035cdc0cb4ec581ebcf6c4a9cb88
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit810e035cdc0cb4ec581ebcf6c4a9cb88::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit810e035cdc0cb4ec581ebcf6c4a9cb88::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc72c14dfee0125b70824a71f97fb4676::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc72c14dfee0125b70824a71f97fb4676::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
