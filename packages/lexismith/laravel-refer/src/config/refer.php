@@ -7,8 +7,33 @@ return [
     | Starting #
     |--------------------------------------------------------------------------
     |
-    | What number the waitlist begins at 
+    | What number the waitlist begins at (when no others on waiting list)
     |
     */
-    'referral_start_number' => '132'
+	
+    'start' => 132,
+	  
+	
+		/*
+    |--------------------------------------------------------------------------
+    | Jump Size
+    |--------------------------------------------------------------------------
+    |
+    | How big a person jumps on waitlist when a referral comes in
+    |
+    */
+	
+		'jump' => 10,
+	  
+	
+		/*
+    |--------------------------------------------------------------------------
+    | Starting #
+    |--------------------------------------------------------------------------
+    |
+    | How long referral codes are
+    |
+    */
+	
+		'code_length' => 6
 ];
