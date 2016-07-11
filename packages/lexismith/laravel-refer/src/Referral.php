@@ -3,4 +3,8 @@
 class Referral
 {
 	
+	public function index()
+	{
+		return 'hello';
+	}
 }

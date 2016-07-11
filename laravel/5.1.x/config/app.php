@@ -137,6 +137,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
     		'LexiSmith\LaravelAlchemy\AlchemyServiceProvider',
+			  'LexiSmith\LaravelRefer\ReferralServiceProvider',
+    		Collective\Html\HtmlServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -192,6 +195,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
     		'Alchemy' 	=> 'LexiSmith\LaravelAlchemy\AlchemyFacade',
+			  'Referral' 	=> 'LexiSmith\LaravelRefer\ReferralFacade',
+      	'Form' => Collective\Html\FormFacade::class,
 
     ],
 

@@ -12,7 +12,3 @@
 |
 */
 
-Route::get('/', function () {
-   return 'hi';
-	
-});

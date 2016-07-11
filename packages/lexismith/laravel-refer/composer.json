@@ -14,5 +14,7 @@
 					"LexiSmith\\LaravelRefer\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+			"laravelcollective/html": "5.2.*"
+		}
 }

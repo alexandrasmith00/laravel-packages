@@ -7,17 +7,25 @@ class ReferralServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('laravel-refer', function() {
-            return new Alchemy;
+            return new Referral;
         });
     }
 	
 		public function boot()
-		{
-			require __DIR__.'/../../routes.php';
+		{			
+			if (! $this->app->routesAreCached()) {
+				require __DIR__.'/routes.php';
+			}
 			
 			$this->publishes([
       	__DIR__.'/config/refer.php' => config_path('refer.php'),
     	]);
 			
+			$this->publishes([
+        __DIR__.'/database/migrations/' => database_path('migrations')
+			], 'migrations');
+			
+			$this->loadViewsFrom(__DIR__.'/views', 'referral');
+
 		}
 }
