@@ -91,7 +91,5 @@ class ReferralController extends Controller
 				$referral->linkedin_link = 'hey';
 				
 				return view('referral::lookup', compact('referral', 'referral'));
-
-
 		}
 }
