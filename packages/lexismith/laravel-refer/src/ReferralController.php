@@ -21,7 +21,13 @@ class ReferralController extends Controller
 				// if a referral code exists, move that person up!
 				if (Session::has('referral_code'))
 				{
+					$previous_spot = DB::table('referrals')->where('referral_code', Session::get('referral_code'))->first()->spot;
 					
+					$new_spot = $previous_spot - config('refer.jump');
+					if ($new_spot <= 0)
+						$new_spot = 1;
+					
+					$updated = DB::table('referrals')->where('referral_code', Session::get('referral_code'))->update(['spot' => $new_spot]);
 				}
 			
 				$validator = Validator::make($request->all(), [ 
@@ -41,14 +47,14 @@ class ReferralController extends Controller
 						{
 								Session::flash('title', "We've got you!");
 								Session::flash('message', "You're already on the list.");
-								$this->lookup(Input::get('email'));
+								return $this->lookup(Input::get('email'));
 						}
 				}
 				else {
 					$this->add(Input::get('email'));
 					Session::flash('title', "Thank you!");
 					Session::flash('message', "We have added your email address to the signup queue.");
-					$this->lookup(Input::get('email'));
+					return $this->lookup(Input::get('email'));
 				}
 		}
 	
@@ -78,7 +84,14 @@ class ReferralController extends Controller
 	
 		public function lookup ($email)
 		{
-//			 return view with lookup info
-				// here's the lookup information
+				$referral = DB::table('referrals')->where('email', $email)->first();
+				$referral->general_link =  config('app.url') . '/?ref=' . $referral->referral_code;
+				$referral->twitter_link = 'hey';
+				$referral->facebook_link = 'hey';
+				$referral->linkedin_link = 'hey';
+				
+				return view('referral::lookup', compact('referral', 'referral'));
+
+
 		}
 }

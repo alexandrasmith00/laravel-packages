@@ -16,7 +16,7 @@ class CreateReferralsTable extends Migration
 					 	$table->integer('spot');
             $table->string('email');
             $table->string('referral_code');
-					  $table->integer('num_referrals');
+					  $table->integer('num_referrals')->default(0);
         });
     }
 
